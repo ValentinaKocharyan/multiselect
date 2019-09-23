@@ -1,0 +1,26 @@
+[
+  {
+    "id": 1,
+    "imgName": "logo1.jpg",
+    "licenseName": "New Balance",
+    "selected": false
+  },
+  {
+    "id": 2,
+    "imgName": "logo2.jpg",
+    "licenseName": "Adidas",
+    "selected": false
+  },
+  {
+    "id": 3,
+    "imgName": "logo3.jpg",
+    "licenseName": "Nike",
+    "selected": false
+  },
+  {
+    "id": 4,
+    "imgName": "ndsu.png",
+    "licenseName": "NDSU",
+    "selected": false
+  }
+]

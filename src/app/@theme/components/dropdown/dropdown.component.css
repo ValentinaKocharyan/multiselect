@@ -1,0 +1,218 @@
+.group-multiselect .cuppa-dropdown {
+  position: relative;
+}
+
+.group-multiselect .selected-list .c-btn {
+  border: 1px solid #ebedf2;
+  border-radius: .25rem;
+  max-height: 159px;
+  overflow: auto;
+  color: #6c757d;
+  padding: 5.5px 15px;
+  font-size: 13px;
+  min-height: 32px;
+  cursor: pointer;
+}
+
+.group-multiselect .selected-list .c-btn:focus {
+  border-color: #22b9ff;
+}
+
+.group-multiselect .selected-list .c-list {
+  width: calc(100% - 15px);
+}
+
+.group-multiselect .selected-list .c-list .c-token {
+  color: #575962;
+  background: #ebedf2;
+  padding: 3px 25px 3px 10px;
+  margin-bottom: 4px;
+  position: relative;
+}
+
+.group-multiselect .selected-list .c-dropdown {
+  position: absolute;
+  top: 50%;
+  right: 0;
+  padding: 5px;
+  transform: translate(-50%,-50%);
+  font-size: 14px;
+}
+
+.group-multiselect.active .selected-list .c-dropdown {
+  transform: translate(-50%,-50%) rotate(180deg);
+}
+
+.group-multiselect .selected-list .c-list .c-token .c-remove {
+  cursor: pointer;
+  margin: 0 10px;
+  right: 0;
+  position: absolute;
+}
+
+.group-multiselect .selected-list .c-list .c-token .c-remove i {
+  color: #575962;
+  font-size: 13px;
+}
+
+.group-multiselect .selected-list .c-list .c-token .c-label label {
+  margin-bottom: 0;
+}
+
+.group-multiselect .selected-list .c-list .c-token .c-label img {
+  width: 100px;
+  height: auto;
+  max-height: 20px;
+  object-fit: contain;
+}
+
+.group-multiselect .dropdown-list {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  width: 100%;
+  z-index: 999;
+  background: #fff;
+}
+
+.group-multiselect .dropdown-list .list-area {
+  box-shadow: 0 0 15px 1px rgba(69,65,78,0.2);
+}
+
+.group-multiselect .dropdown-list .list-area .create-group {
+  text-align: right;
+  padding: 8px 10px 0;
+  margin-top: 5px;
+  border-top: 1px solid rgba(0, 0, 0, .2);
+}
+
+.group-multiselect .dropdown-list .list-area .create-group a {
+  color: #36a3f7;
+  text-decoration: underline;
+  cursor: pointer;
+}
+
+.group-multiselect .dropdown-list .list-area .list-filter {
+  display: flex;
+  padding: 10px 15px;
+}
+
+.group-multiselect .dropdown-list .list-area .list-filter input {
+  border-color: #ebedf2;
+  color: #575962;
+  padding: 7px 15px;
+  border-radius: .25rem;
+  width: 100%;
+}
+
+.group-multiselect .dropdown-list .list-area .select-all {
+  padding: 0 15px 5px;
+  display: flex;
+}
+
+.group-multiselect .dropdown-list .list-area .select-all span {
+  padding: 3px 25px 3px 15px;
+  color: #575962;
+  width: 48%;
+  display: inline-block;
+  position: relative;
+  text-align: center;
+  cursor: pointer;
+}
+
+.group-multiselect .dropdown-list .list-area .select-all span:nth-of-type(1) {
+  margin-right: 2%;
+}
+
+.group-multiselect .dropdown-list .list-area .select-all span:hover {
+  background: #ececec;
+}
+
+.group-multiselect .dropdown-list .list-area .select-all span.active {
+  background: #ececec;
+}
+
+.group-multiselect .dropdown-list .list-area .multiselect-scroll {
+  overflow: auto;
+  max-height: 300px;
+  min-height: 300px;
+}
+
+.group-multiselect .dropdown-list .list-grp {
+  margin: 0 15px 5px;
+}
+
+.group-multiselect .dropdown-list .list-grp.active {
+  background: #ececec;
+}
+
+.group-multiselect .dropdown-list .list-grp.active .item-check {
+  display: block;
+  position: absolute;
+  right: 0;
+  top: 50%;
+  transform: translate(0, -50%);
+  font-size: 12px;
+}
+
+.group-multiselect .dropdown-list .list-grp:hover {
+  background: #ececec;
+}
+
+.group-multiselect .dropdown-list .list-grp .display-hide {
+  display: none !important;
+}
+
+.group-multiselect .dropdown-list .list-grp .display-show {
+  display: block !important;
+}
+
+.group-multiselect .dropdown-list .list-grp .pure-checkbox {
+  padding: 8px 10px;
+  cursor: pointer;
+}
+.group-multiselect .dropdown-list .list-grp .pure-checkbox .pure-checkbox-content {
+  padding-right: 15px;
+}
+
+.group-multiselect .dropdown-list .list-grp .pure-checkbox img {
+  width: 100px;
+  height: auto;
+  max-height: 20px;
+  object-fit: contain;
+}
+
+.group-multiselect .dropdown-list .list-grp .pure-checkbox .la-check {
+  display: none;
+}
+
+.group-multiselect .dropdown-list .list-grp .pure-checkbox i.fa {
+  font-size: 17px;
+  vertical-align: middle;
+  padding-right: 10px;
+  color: #404040;
+}
+
+.group-multiselect .dropdown-list .list-grp .pure-checkbox.active {
+  background: #f7f8fa;
+}
+
+.group-multiselect .dropdown-list .list-grp .pure-checkbox.active .la-check {
+  display: block;
+  position: absolute;
+  right: 0;
+  top: 50%;
+  transform: translate(0, -50%);
+  font-size: 12px;
+}
+
+.group-multiselect .dropdown-list .list-grp .pure-checkbox img {
+  border: 0 !important;
+  margin-right: 10px;
+}
+
+.group-multiselect .dropdown-list .list-grp .pure-checkbox label {
+  margin-bottom: 0;
+  color: #575962;
+  cursor: pointer;
+}

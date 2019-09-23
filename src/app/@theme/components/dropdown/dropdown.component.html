@@ -1,0 +1,48 @@
+<div class="group-multiselect">
+  <div class="cuppa-dropdown">
+    <div class="selected-list">
+      <div class="c-btn d-flex justify-content-between align-items-center">
+        <div class="c-list">
+          <div *ngFor="let license of licenses.licenses" >
+            <div class="c-token d-flex justify-content-between" *ngIf="license.selected">
+            <span class="c-label align-self-center">
+              <img src="../../../../assets/img/{{license.imgName}}">
+              <label>{{license.licenseName}}</label>
+            </span>
+              <span class="c-remove align-self-center" (click)="removeFromSelected(license.id)">
+                <i class="fas fa-times"></i>
+            </span>
+            </div>
+          </div>
+        </div>
+        <div class="c-dropdown" (click)="dropdownToggle()">
+          <i class="fas fa-angle-down"></i>
+        </div>
+      </div>
+    </div>
+    <div class="dropdown-list" *ngIf="dropdownOpen">
+      <div class="list-area">
+        <div class="list-filter">
+          <input class="c-input form-control" type="text" placeholder="Search">
+        </div>
+        <div class="pure-checkbox select-all">
+          <span (click)="selectAll(true)">Select All</span>
+          <span (click)="selectAll(false)">Unselect All</span>
+        </div>
+        <div class="multiselect-scroll">
+          <div class="list-grp" *ngFor="let license of licenses.licenses" [ngClass]="license.selected ? 'active' : ''" (click)="selectLicense(license.id, license.selected)">
+            <div class="pure-checkbox">
+              <div class="pure-checkbox-content position-relative">
+                <img src="../../../../assets/img/{{license.imgName}}">
+                <label>{{license.licenseName}}</label>
+                <div class="item-check" *ngIf="license.selected">
+                  <i class="fa fa-check"></i>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
