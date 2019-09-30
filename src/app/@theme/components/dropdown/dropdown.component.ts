@@ -11,7 +11,7 @@ import { Licenses } from '../../../@core/services';
 })
 export class DropdownComponent implements OnInit {
 
-  constructor(public licenses: Licenses) { }
+  constructor(public licensesList: Licenses) { }
   public dropdownOpen: boolean = false;
 
 
@@ -24,22 +24,22 @@ export class DropdownComponent implements OnInit {
   }
 
   public getLicenses(): void {
-    this.licenses.getLicenses().subscribe( res => {
-      this.licenses.licenses = res;
+    this.licensesList.getLicenses().subscribe( res => {
+      this.licensesList.licensesServiceList = res;
     }, err => {
       console.log(err);
     });
   }
 
   public selectLicense(id: number, selected: boolean): void {
-    const index: number = this.licenses.licenses.findIndex(item => item.id === id);
+    const index: number = this.licensesList.licensesServiceList.findIndex(item => item.id === id);
     const data: object = {
             id,
             selected
           };
 
-    this.licenses.licenses[index].selected = !this.licenses.licenses[index].selected;
-    this.licenses.selectLicense(data).subscribe( res => {
+    this.licensesList.licensesServiceList[index].selected = !this.licensesList.licensesServiceList[index].selected;
+    this.licensesList.selectLicense(data).subscribe( res => {
       console.log(res);
     }, err => {
       console.log(err);
@@ -47,13 +47,13 @@ export class DropdownComponent implements OnInit {
   }
 
   public removeFromSelected(id: number): void {
-    const index: number = this.licenses.licenses.findIndex(item => item.id === id);
+    const index: number = this.licensesList.licensesServiceList.findIndex(item => item.id === id);
     const data: object = {
       id
     };
 
-    this.licenses.licenses[index].selected = false;
-    this.licenses.removeFromSelected(data).subscribe( res => {
+    this.licensesList.licensesServiceList[index].selected = false;
+    this.licensesList.removeFromSelected(data).subscribe( res => {
       console.log(res);
     }, err => {
       console.log(err);
@@ -61,12 +61,12 @@ export class DropdownComponent implements OnInit {
   }
 
   public selectAll(select: boolean): void {
-    const licences = this.licenses.licenses;
+    const licences = this.licensesList.licensesServiceList;
 
     for ( const currentLicense of licences ) {
       currentLicense.selected = select;
     }
-    this.licenses.selectAllLicenses(select).subscribe( res => {
+    this.licensesList.selectAllLicenses(select).subscribe( res => {
       console.log(res);
     }, err => {
       console.log(err);

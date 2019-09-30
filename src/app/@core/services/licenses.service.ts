@@ -6,21 +6,21 @@ export class Licenses {
   constructor(public http: HttpClient) {}
 
   public url: string = 'http://localhost:4200/assets/licenses.json';
-  public licenses: LicensesType[];
+  public licensesServiceList: LicensesType[];
 
   public getLicenses(): Observable<LicensesType[]> {
     return this.http.get<LicensesType[]>(this.url);
   }
 
-  public selectLicense(data: object): Observable<{}> {
-    return this.http.post<LicensesType[]>(this.url, data);
+  public selectLicense(data: object): Observable<LicensesType> {
+    return this.http.post<LicensesType>(this.url, data);
   }
 
-  public removeFromSelected(data: object): Observable<{}> {
-    return this.http.delete<LicensesType[]>(this.url, data);
+  public removeFromSelected(data: object): Observable<LicensesType> {
+    return this.http.delete<LicensesType>(this.url, data);
   }
 
-  public selectAllLicenses(select: boolean): Observable<{}> {
-    return this.http.post<LicensesType[]>(this.url, select);
+  public selectAllLicenses(select: boolean): Observable<LicensesType> {
+    return this.http.post<LicensesType>(this.url, select);
   }
 }
