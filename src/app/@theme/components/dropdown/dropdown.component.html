@@ -3,7 +3,7 @@
     <div class="selected-list">
       <div class="c-btn d-flex justify-content-between align-items-center">
         <div class="c-list">
-          <div *ngFor="let license of licensesList.licensesServiceList" >
+          <div *ngFor="let license of items" >
             <div class="c-token d-flex justify-content-between" *ngIf="license.selected">
             <span class="c-label align-self-center">
               <img src="../../../../assets/img/{{license.imgName}}">
@@ -29,8 +29,8 @@
           <span (click)="selectAll(true)">Select All</span>
           <span (click)="selectAll(false)">Unselect All</span>
         </div>
-        <div class="multiselect-scroll">
-          <div class="list-grp" *ngFor="let license of licensesList.licensesServiceList" [ngClass]="{'active' : license.selected}" (click)="selectLicense(license.id, license.selected)">
+        <div class="multiselect-scroll" (scroll)="onScroll($event)">
+          <div class="list-grp" *ngFor="let license of items" [ngClass]="{'active' : license.selected}" (click)="selectLicense(license.id, license.selected)">
             <div class="pure-checkbox">
               <div class="pure-checkbox-content position-relative">
                 <img src="../../../../assets/img/{{license?.imgName}}">
