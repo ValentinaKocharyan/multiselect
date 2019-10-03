@@ -17,11 +17,11 @@ export class DropdownComponent implements OnInit {
   }
 
   public dropdownOpen: boolean = false;
-  public items: LicensesType[];
-  private getCount: number = LicensesInfo.ITEMS_COUNT_GET;
-  private licensesCount: number;
+  public items: LicensesType[] = [];
+  private licensesOffset: number = 0;
+  private licensesLimit = LicensesInfo.ITEMS_LIMIT_GET;
+  private licensesTotal: number;
   private readyForGetData: boolean = true;
-
 
   ngOnInit() {
     this.getLicenses();
@@ -34,7 +34,7 @@ export class DropdownComponent implements OnInit {
   public getLicenses(): void {
     this.licensesList.getLicenses().subscribe(res => {
       this.licensesList.licensesServiceList = res;
-      this.licensesCount = this.licensesList.licensesServiceList.length;
+      this.licensesTotal = this.licensesList.licensesServiceList.length;
       this.getLicensesData();
 
     }, err => {
@@ -87,8 +87,8 @@ export class DropdownComponent implements OnInit {
   public onScroll(event: any): void {
     const elem = event.target;
 
-    if (elem.scrollHeight - elem.scrollTop <= elem.offsetHeight + 10 && this.getCount < this.licensesCount && this.readyForGetData) {
-      this.getCount += 10;
+    if (elem.scrollHeight - elem.scrollTop <= elem.offsetHeight + 10 && this.licensesOffset < this.licensesTotal && this.readyForGetData) {
+      this.licensesOffset += 10;
       this.readyForGetData = false;
       setTimeout(() => {
         this.getLicensesData();
@@ -97,7 +97,8 @@ export class DropdownComponent implements OnInit {
   }
 
   private getLicensesData() {
-    this.items = this.licensesList.licensesServiceList.slice(0, this.getCount);
+    const newItemsArray = this.licensesList.licensesServiceList.slice(this.licensesOffset, this.licensesOffset + this.licensesLimit);
+    this.items = this.items.concat(newItemsArray);
     this.readyForGetData = true;
   }
 }

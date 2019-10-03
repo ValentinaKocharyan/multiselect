@@ -1,3 +1,3 @@
 export class LicensesInfo {
-  static readonly ITEMS_COUNT_GET = 10;
+  static readonly ITEMS_LIMIT_GET = 10;
 }
