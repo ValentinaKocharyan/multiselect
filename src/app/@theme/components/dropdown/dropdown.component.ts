@@ -57,7 +57,8 @@ export class DropdownComponent implements OnInit {
     });
   }
 
-  public removeFromSelected(id: number): void {
+  public removeFromSelected(id: number, event): void {
+    event.stopPropagation();
     const index: number = this.licensesList.licensesServiceList.findIndex(item => item.id === id);
     const data: object = {
       id

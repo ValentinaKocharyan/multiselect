@@ -1,26 +1,26 @@
-<div class="group-multiselect">
+<div class="group-multiselect" (appOutsideClick)="dropdownOpen = false">
   <div class="cuppa-dropdown">
-    <div class="selected-list">
+    <div class="selected-list" (click)="dropdownToggle()">
       <div class="c-btn d-flex justify-content-between align-items-center">
         <div class="c-list">
           <div *ngFor="let license of items" >
             <div class="c-token d-flex justify-content-between" *ngIf="license.selected">
-            <span class="c-label align-self-center">
-              <img src="../../../../assets/img/{{license.imgName}}">
-              <label>{{license.licenseName}}</label>
-            </span>
-              <span class="c-remove align-self-center" (click)="removeFromSelected(license.id)">
-                <i class="fas fa-times"></i>
-            </span>
+              <span class="c-label align-self-center">
+                <img src="../../../../assets/img/{{license.imgName}}">
+                <label>{{license.licenseName}}</label>
+              </span>
+              <span class="c-remove align-self-center" (click)="removeFromSelected(license.id, $event)">
+                  <i class="fas fa-times"></i>
+              </span>
             </div>
           </div>
         </div>
-        <div class="c-dropdown" (click)="dropdownToggle()">
+        <div class="c-dropdown">
           <i class="fas fa-angle-down"></i>
         </div>
       </div>
     </div>
-    <div class="dropdown-list" *ngIf="dropdownOpen">
+    <div class="dropdown-list" [ngStyle]="{display: dropdownOpen ? 'block' : 'none'}">
       <div class="list-area">
         <div class="list-filter">
           <input class="c-input form-control" type="text" placeholder="Search">

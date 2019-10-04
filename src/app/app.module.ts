@@ -4,11 +4,13 @@ import { AppComponent } from './app.component';
 import { DropdownComponent } from './@theme/components/dropdown/dropdown.component';
 import { HTTP_INTERCEPTORS, HttpClientModule } from '@angular/common/http';
 import { HttpMockRequestInterceptor } from './@core/interceptor';
+import {OutsideClickDirective} from './@theme/directives/outside-click.directive';
 
 @NgModule({
   declarations: [
     AppComponent,
-    DropdownComponent
+    DropdownComponent,
+    OutsideClickDirective
   ],
   imports: [
     BrowserModule,
