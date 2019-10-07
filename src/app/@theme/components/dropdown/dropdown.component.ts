@@ -8,8 +8,8 @@ import { LicensesType } from '../../../@core/interfaces';
   templateUrl: './dropdown.component.html',
   styleUrls: ['./dropdown.component.css'],
   providers: [
-  Licenses
-]
+    Licenses
+  ]
 })
 export class DropdownComponent implements OnInit {
 
@@ -18,10 +18,11 @@ export class DropdownComponent implements OnInit {
 
   public dropdownOpen: boolean = false;
   public items: LicensesType[] = [];
-  private licensesOffset: number = 0;
-  private licensesLimit = LicensesInfo.ITEMS_LIMIT_GET;
-  private licensesTotal: number;
+  private offset: number = 0;
+  private limit: number = LicensesInfo.ITEMS_LIMIT_GET;
+  private total: number;
   private readyForGetData: boolean = true;
+  public licensesServiceList: LicensesType[] = [];
 
   ngOnInit() {
     this.getLicenses();
@@ -33,63 +34,54 @@ export class DropdownComponent implements OnInit {
 
   public getLicenses(): void {
     this.licensesList.getLicenses().subscribe(res => {
-      this.licensesList.licensesServiceList = res;
-      this.licensesTotal = this.licensesList.licensesServiceList.length;
+      this.licensesServiceList = res;
+      this.total = this.licensesServiceList.length;
       this.getLicensesData();
-
-    }, err => {
-      console.log(err);
     });
   }
 
   public selectLicense(id: number, selected: boolean): void {
-    const index: number = this.licensesList.licensesServiceList.findIndex(item => item.id === id);
+    const index: number = this.licensesServiceList.findIndex(item => item.id === id);
     const data: object = {
       id,
       selected
     };
 
-    this.licensesList.licensesServiceList[index].selected = !this.licensesList.licensesServiceList[index].selected;
+    this.licensesServiceList[index].selected = !this.licensesServiceList[index].selected;
     this.licensesList.selectLicense(data).subscribe(res => {
       console.log(res);
-    }, err => {
-      console.log(err);
     });
   }
 
   public removeFromSelected(id: number, event): void {
     event.stopPropagation();
-    const index: number = this.licensesList.licensesServiceList.findIndex(item => item.id === id);
+    const index: number = this.licensesServiceList.findIndex(item => item.id === id);
     const data: object = {
       id
     };
 
-    this.licensesList.licensesServiceList[index].selected = false;
+    this.licensesServiceList[index].selected = false;
     this.licensesList.removeFromSelected(data).subscribe(res => {
       console.log(res);
-    }, err => {
-      console.log(err);
     });
   }
 
   public selectAll(select: boolean): void {
-    const licences = this.licensesList.licensesServiceList;
+    const licences = this.licensesServiceList;
 
     for (const currentLicense of licences) {
       currentLicense.selected = select;
     }
     this.licensesList.selectAllLicenses(select).subscribe(res => {
       console.log(res);
-    }, err => {
-      console.log(err);
     });
   }
 
   public onScroll(event: any): void {
     const elem = event.target;
 
-    if (elem.scrollHeight - elem.scrollTop <= elem.offsetHeight + 10 && this.licensesOffset < this.licensesTotal && this.readyForGetData) {
-      this.licensesOffset += 10;
+    if (elem.scrollHeight - elem.scrollTop <= elem.offsetHeight + 10 && this.offset < this.total && this.readyForGetData) {
+      this.offset += 10;
       this.readyForGetData = false;
       setTimeout(() => {
         this.getLicensesData();
@@ -97,8 +89,8 @@ export class DropdownComponent implements OnInit {
     }
   }
 
-  private getLicensesData() {
-    const newItemsArray = this.licensesList.licensesServiceList.slice(this.licensesOffset, this.licensesOffset + this.licensesLimit);
+  private getLicensesData(): void {
+    const newItemsArray = this.licensesServiceList.slice(this.offset, this.offset + this.limit);
     this.items = this.items.concat(newItemsArray);
     this.readyForGetData = true;
   }

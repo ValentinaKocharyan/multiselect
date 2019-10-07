@@ -6,7 +6,6 @@ export class Licenses {
   constructor(public http: HttpClient) {}
 
   public url: string = 'http://localhost:4200/assets/licenses.json';
-  public licensesServiceList: LicensesType[];
 
   public getLicenses(): Observable<LicensesType[]> {
     return this.http.get<LicensesType[]>(this.url);
