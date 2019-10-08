@@ -1,19 +1,22 @@
 import { Component, OnInit } from '@angular/core';
 import { Licenses } from '../../../@core/services';
+import { ElementScroll } from '../../../@core/services';
 import { LicensesInfo } from '../../../@core/constants';
 import { LicensesType } from '../../../@core/interfaces';
+import * as _ from 'lodash';
 
 @Component({
   selector: 'app-dropdown',
   templateUrl: './dropdown.component.html',
   styleUrls: ['./dropdown.component.css'],
   providers: [
-    Licenses
+    Licenses,
+    ElementScroll
   ]
 })
 export class DropdownComponent implements OnInit {
 
-  constructor(public licensesList: Licenses) {
+  constructor(public licensesList: Licenses, public elementScroll: ElementScroll) {
   }
 
   public dropdownOpen: boolean = false;
@@ -21,7 +24,6 @@ export class DropdownComponent implements OnInit {
   private offset: number = 0;
   private limit: number = LicensesInfo.ITEMS_LIMIT_GET;
   private total: number;
-  private readyForGetData: boolean = true;
   public licensesServiceList: LicensesType[] = [];
 
   ngOnInit() {
@@ -67,31 +69,29 @@ export class DropdownComponent implements OnInit {
   }
 
   public selectAll(select: boolean): void {
-    const licences = this.licensesServiceList;
-
-    for (const currentLicense of licences) {
+    for (const currentLicense of this.licensesServiceList) {
       currentLicense.selected = select;
     }
+    _.each(this.licensesServiceList, (currentLicense) => {
+      currentLicense.selected = select;
+    });
+
     this.licensesList.selectAllLicenses(select).subscribe(res => {
       console.log(res);
     });
   }
 
   public onScroll(event: any): void {
-    const elem = event.target;
-
-    if (elem.scrollHeight - elem.scrollTop <= elem.offsetHeight + 10 && this.offset < this.total && this.readyForGetData) {
+    this.elementScroll.isScrollInBottom(event, this.offset, this.total).subscribe(() => {
+      this.getLicensesData();
       this.offset += 10;
-      this.readyForGetData = false;
-      setTimeout(() => {
-        this.getLicensesData();
-      }, 200);
-    }
+    }, (error) => {
+      console.log(error);
+    });
   }
 
   private getLicensesData(): void {
     const newItemsArray = this.licensesServiceList.slice(this.offset, this.offset + this.limit);
     this.items = this.items.concat(newItemsArray);
-    this.readyForGetData = true;
   }
 }
