@@ -1,11 +1,12 @@
 import { Observable } from 'rxjs';
 import { LicensesType } from '../interfaces';
 import { HttpClient } from '@angular/common/http';
+import {environment} from '../../../environments/environment';
 
 export class Licenses {
   constructor(public http: HttpClient) {}
 
-  public url: string = 'http://localhost:4200/assets/licenses.json';
+  public url: string = `${environment.baseUrl}assets/licenses.json`;
 
   public getLicenses(): Observable<LicensesType[]> {
     return this.http.get<LicensesType[]>(this.url);
