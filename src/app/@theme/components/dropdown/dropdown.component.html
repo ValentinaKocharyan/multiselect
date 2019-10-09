@@ -23,7 +23,7 @@
     <div class="dropdown-list" [ngStyle]="{display: dropdownOpen ? 'block' : 'none'}">
       <div class="list-area">
         <div class="list-filter">
-          <input class="c-input form-control" type="text" placeholder="Search">
+          <input class="c-input form-control" type="text" placeholder="Search" (input)="search($event?.target?.value)">
         </div>
         <div class="pure-checkbox select-all">
           <span (click)="selectAll(true)">Select All</span>
@@ -31,7 +31,7 @@
         </div>
         <div class="multiselect-scroll" (scroll)="onScroll($event)">
           <div class="list-grp" *ngFor="let license of items" [ngClass]="{'active' : license.selected}" (click)="selectLicense(license.id, license.selected)">
-            <div class="pure-checkbox">
+            <div class="pure-checkbox" *ngIf="license?.show">
               <div class="pure-checkbox-content position-relative">
                 <img src="../../../../assets/img/{{license?.imgName}}">
                 <label>{{license?.licenseName}}</label>

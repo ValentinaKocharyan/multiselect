@@ -94,4 +94,19 @@ export class DropdownComponent implements OnInit {
     const newItemsArray = this.licensesServiceList.slice(this.offset, this.offset + this.limit);
     this.items = this.items.concat(newItemsArray);
   }
+
+  public search(value: string): void {
+    let filteredArray: LicensesType[] = [];
+
+    _.each(this.licensesServiceList, (currentLicense, index) => {
+      if (!currentLicense.licenseName.includes(value)) {
+        this.licensesServiceList[index].show = false;
+      }
+      else {
+        filteredArray.push(currentLicense);
+        this.licensesServiceList[index].show = true;
+      }
+    });
+    this.items = filteredArray;
+  }
 }

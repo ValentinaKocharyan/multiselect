@@ -3,4 +3,5 @@ export interface LicensesType {
   imgName: string;
   licenseName: string;
   selected: boolean;
+  show: boolean;
 }

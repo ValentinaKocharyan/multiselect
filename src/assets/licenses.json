@@ -3,288 +3,336 @@
     "id": 1,
     "imgName": "logo1.jpg",
     "licenseName": "New Balance",
-    "selected": false
+    "selected": false,
+    "show": true
   },
   {
     "id": 2,
     "imgName": "logo2.jpg",
     "licenseName": "Adidas",
-    "selected": false
+    "selected": false,
+    "show": true
   },
   {
     "id": 3,
     "imgName": "logo3.jpg",
     "licenseName": "Nike",
-    "selected": false
+    "selected": false,
+    "show": true
   },
   {
     "id": 4,
     "imgName": "ndsu.png",
     "licenseName": "NDSU",
-    "selected": false
+    "selected": false,
+    "show": true
   },
   {
     "id": 5,
     "imgName": "logo1.jpg",
     "licenseName": "New Balance",
-    "selected": false
+    "selected": false,
+    "show": true
   },
   {
     "id": 6,
     "imgName": "logo2.jpg",
     "licenseName": "Adidas",
-    "selected": false
+    "selected": false,
+    "show": true
   },
   {
     "id": 7,
     "imgName": "logo3.jpg",
     "licenseName": "Nike",
-    "selected": false
+    "selected": false,
+    "show": true
   },
   {
     "id": 8,
     "imgName": "ndsu.png",
     "licenseName": "NDSU",
-    "selected": false
+    "selected": false,
+    "show": true
   },
   {
     "id": 9,
     "imgName": "ndsu.png",
     "licenseName": "NDSU",
-    "selected": false
+    "selected": false,
+    "show": true
   },
   {
     "id": 10,
     "imgName": "logo1.jpg",
     "licenseName": "New Balance",
-    "selected": false
+    "selected": false,
+    "show": true
   },
   {
     "id": 11,
     "imgName": "logo2.jpg",
     "licenseName": "Adidas",
-    "selected": false
+    "selected": false,
+    "show": true
   },
   {
     "id": 12,
     "imgName": "logo3.jpg",
     "licenseName": "Nike",
-    "selected": false
+    "selected": false,
+    "show": true
   },
   {
     "id": 13,
     "imgName": "ndsu.png",
     "licenseName": "NDSU",
-    "selected": false
+    "selected": false,
+    "show": true
   },
   {
     "id": 14,
     "imgName": "logo2.jpg",
     "licenseName": "Adidas",
-    "selected": false
+    "selected": false,
+    "show": true
   },
   {
     "id": 15,
     "imgName": "logo3.jpg",
     "licenseName": "Nike",
-    "selected": false
+    "selected": false,
+    "show": true
   },
   {
     "id": 16,
     "imgName": "ndsu.png",
     "licenseName": "NDSU",
-    "selected": false
+    "selected": false,
+    "show": true
   },
   {
     "id": 17,
     "imgName": "logo1.jpg",
     "licenseName": "New Balance",
-    "selected": false
+    "selected": false,
+    "show": true
   },
   {
     "id": 18,
     "imgName": "logo2.jpg",
     "licenseName": "Adidas",
-    "selected": false
+    "selected": false,
+    "show": true
   },
   {
     "id": 19,
     "imgName": "logo3.jpg",
     "licenseName": "Nike",
-    "selected": false
+    "selected": false,
+    "show": true
   },
   {
     "id": 20,
     "imgName": "ndsu.png",
     "licenseName": "NDSU",
-    "selected": false
+    "selected": false,
+    "show": true
   },
   {
     "id": 21,
     "imgName": "ndsu.png",
     "licenseName": "NDSU",
-    "selected": false
+    "selected": false,
+    "show": true
   },
   {
     "id": 22,
     "imgName": "logo1.jpg",
     "licenseName": "New Balance",
-    "selected": false
+    "selected": false,
+    "show": true
   },
   {
     "id": 23,
     "imgName": "logo2.jpg",
     "licenseName": "Adidas",
-    "selected": false
+    "selected": false,
+    "show": true
   },
   {
     "id": 24,
     "imgName": "logo3.jpg",
     "licenseName": "Nike",
-    "selected": false
+    "selected": false,
+    "show": true
   },
   {
     "id": 25,
     "imgName": "ndsu.png",
     "licenseName": "NDSU",
-    "selected": false
+    "selected": false,
+    "show": true
   },
   {
     "id": 26,
     "imgName": "logo2.jpg",
     "licenseName": "Adidas",
-    "selected": false
+    "selected": false,
+    "show": true
   },
   {
     "id": 27,
     "imgName": "logo3.jpg",
     "licenseName": "Nike",
-    "selected": false
+    "selected": false,
+    "show": true
   },
   {
     "id": 28,
     "imgName": "ndsu.png",
     "licenseName": "NDSU",
-    "selected": false
+    "selected": false,
+    "show": true
   },
   {
     "id": 29,
     "imgName": "ndsu.png",
     "licenseName": "NDSU",
-    "selected": false
+    "selected": false,
+    "show": true
   },
   {
     "id": 30,
     "imgName": "logo1.jpg",
     "licenseName": "New Balance",
-    "selected": false
+    "selected": false,
+    "show": true
   },
   {
     "id": 31,
     "imgName": "logo2.jpg",
     "licenseName": "Adidas",
-    "selected": false
+    "selected": false,
+    "show": true
   },
   {
     "id": 32,
     "imgName": "logo3.jpg",
     "licenseName": "Nike",
-    "selected": false
+    "selected": false,
+    "show": true
   },
   {
     "id": 33,
     "imgName": "ndsu.png",
     "licenseName": "NDSU",
-    "selected": false
+    "selected": false,
+    "show": true
   },
   {
     "id": 34,
     "imgName": "logo2.jpg",
     "licenseName": "Adidas",
-    "selected": false
+    "selected": false,
+    "show": true
   },
   {
     "id": 35,
     "imgName": "logo3.jpg",
     "licenseName": "Nike",
-    "selected": false
+    "selected": false,
+    "show": true
   },
   {
     "id": 36,
     "imgName": "ndsu.png",
     "licenseName": "NDSU",
-    "selected": false
+    "selected": false,
+    "show": true
   },
   {
     "id": 37,
     "imgName": "logo1.jpg",
     "licenseName": "New Balance",
-    "selected": false
+    "selected": false,
+    "show": true
   },
   {
     "id": 38,
     "imgName": "logo2.jpg",
     "licenseName": "Adidas",
-    "selected": false
+    "selected": false,
+    "show": true
   },
   {
     "id": 39,
     "imgName": "logo3.jpg",
     "licenseName": "Nike",
-    "selected": false
+    "selected": false,
+    "show": true
   },
   {
     "id": 40,
     "imgName": "ndsu.png",
     "licenseName": "NDSU",
-    "selected": false
+    "selected": false,
+    "show": true
   },
   {
     "id": 41,
     "imgName": "ndsu.png",
     "licenseName": "NDSU",
-    "selected": false
+    "selected": false,
+    "show": true
   },
   {
     "id": 42,
     "imgName": "logo1.jpg",
     "licenseName": "New Balance",
-    "selected": false
+    "selected": false,
+    "show": true
   },
   {
     "id": 43,
     "imgName": "logo2.jpg",
     "licenseName": "Adidas",
-    "selected": false
+    "selected": false,
+    "show": true
   },
   {
     "id": 44,
     "imgName": "logo3.jpg",
     "licenseName": "Nike",
-    "selected": false
+    "selected": false,
+    "show": true
   },
   {
     "id": 45,
     "imgName": "ndsu.png",
     "licenseName": "NDSU",
-    "selected": false
+    "selected": false,
+    "show": true
   },
   {
     "id": 46,
     "imgName": "logo2.jpg",
     "licenseName": "Adidas",
-    "selected": false
+    "selected": false,
+    "show": true
   },
   {
     "id": 47,
     "imgName": "logo3.jpg",
     "licenseName": "Nike",
-    "selected": false
+    "selected": false,
+    "show": true
   },
   {
     "id": 48,
     "imgName": "ndsu.png",
     "licenseName": "NDSU",
-    "selected": false
+    "selected": false,
+    "show": true
   }
 ]
