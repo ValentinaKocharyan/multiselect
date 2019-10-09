@@ -7,7 +7,20 @@ import {catchError} from 'rxjs/operators';
 export class HttpMockRequestInterceptor implements HttpInterceptor {
   constructor(private injector: Injector) {}
 
+  private token: string = 'token';
+
+  private getToken(): string {
+    this.token = 'new token';
+    return this.token;
+  }
+
   intercept(request: HttpRequest<any>, next: HttpHandler): Observable<HttpEvent<any>> {
+    request = request.clone({
+      setHeaders: {
+        Authorization: `Bearer ${this.getToken()}`
+      }
+    });
+    console.log(this.token);
     return next.handle(request)
       .pipe(catchError((error) => {
         return throwError(error);
